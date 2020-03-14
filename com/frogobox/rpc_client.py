@@ -5,15 +5,25 @@ from com.frogobox.config import *
 
 rpcServer = xmlrpc.client.ServerProxy(BASE_CONFIG_URL)
 
+version_client = BASE_VERSION_CLIENT
 
-number1 = 16
-number2 = 4
+print("Version Client \t: " + str(version_client))
+print("-------------------------")
+print()
+print("Checking Version....")
+print()
+print("Version Server \t: " + str(rpcServer.get_version_update()))
 
-print(str(number1) + " + " + str(number2) + " = " + str(rpcServer.plusMath(number1, number2)))
-print(str(number1) + " * " + str(number2) + " = " + str(rpcServer.multipleMath(number1, number2)))
-print(str(number1) + " / " + str(number2) + " = " + str(rpcServer.divideMath(number1, number2)))
-print(str(number1) + " - " + str(number2) + " = " + str(rpcServer.minusMath(number1, number2)))
-print(str(number1) + "pow(" + str(number2) + ") = " + str(rpcServer.powMath(number1, number2)))
-
-# print semua fungsi yang ada di komputer remote
-print(rpcServer.system.listMethods())
+if rpcServer.updated_version(version_client):
+    print("Latest Version Apps - No Need Update")
+else:
+    inputUser = input("Apakah Ingin Memperbarui Version? (Y/N) ")
+    if inputUser == 'y':
+        version_client = rpcServer.get_version_update()
+        print("Thanks For Update")
+        print("Version Client \t : " + str(version_client))
+    elif inputUser == 'n':
+        print("Your version not updated")
+        print("Version Client \t : " + str(version_client))
+    else:
+        print("Error")
