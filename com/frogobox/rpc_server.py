@@ -13,7 +13,7 @@ class RequestHandler(SimpleXMLRPCRequestHandler):
 
 version_server = BASE_VERSION_SERVER
 
-print(vers)
+print("Version Server \t: " + str(version_server))
 
 rpcServer = SimpleXMLRPCServer((BASE_CONFIG_IP_ADDRESS, BASE_CONFIG_PORT), requestHandler=RequestHandler)
 rpcServer.register_introspection_functions()

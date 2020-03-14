@@ -8,12 +8,12 @@ rpcServer = xmlrpc.client.ServerProxy(BASE_CONFIG_URL)
 version_client = BASE_VERSION_CLIENT
 
 print("Version Client \t: " + str(version_client))
-print("-------------------------")
-print()
-print("Checking Version....")
-print()
+print("-- Checking Version From Server --")
 print("Version Server \t: " + str(rpcServer.get_version_update()))
+print()
+print("Result : ")
 
+print("----------------------------------")
 if rpcServer.updated_version(version_client):
     print("Latest Version Apps - No Need Update")
 else:
@@ -26,4 +26,5 @@ else:
         print("Your version not updated")
         print("Version Client \t : " + str(version_client))
     else:
-        print("Error")
+        print("Updating Error")
+print("----------------------------------")
