@@ -18,11 +18,17 @@ Implement Simple Versioning Control In Python
 - Team Name
 ![ScreenShoot Apps](docs/image/team_name.png?raw=true)
 
+- RPC Server
+![ScreenShoot Apps](docs/image/rpc_server.jpg?raw=true)
+
+- RPC Client
+![ScreenShoot Apps](docs/image/rpc_client.jpg?raw=true)
+
 # Link Task
-https://github.com/amirisback/Versioning/blob/master/docs/cots_1.pdf
+https://github.com/amirisback/Versioning/blob/master/task/cots_1.pdf
 
 # Link Report
-
+https://github.com/amirisback/Versioning/blob/master/docs/report.docx
 
 # Attention !!!
 Please enjoy and don't forget fork and give a star
